@@ -1,5 +1,8 @@
+---
+layout: null
+---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="margin: 0; padding: 0;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +16,22 @@
         :root {
             --bg-deep: #050505;
             --bg-card: #0F0F0F;
-            --pink-blush: #F4C2C2; /* Naughty/Soft Pink accent */
+            --pink-blush: #F4C2C2; 
             --pink-muted: #D9A7A7;
             --text-main: #FFFFFF;
             --text-muted: #94A3B8;
             --font-head: 'Playfair Display', serif;
             --font-body: 'Inter', sans-serif;
             --border: rgba(244, 194, 194, 0.15);
+        }
+
+        /* 1. RESET FOR FULL WIDTH */
+        html, body { 
+            margin: 0 !important; 
+            padding: 0 !important; 
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
@@ -29,7 +41,6 @@
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.7;
-            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; text-transform: uppercase; letter-spacing: 3px; }
@@ -39,7 +50,7 @@
         /* Navigation */
         nav {
             position: fixed;
-            top: 0; width: 100%; z-index: 1000;
+            top: 0; left: 0; width: 100%; z-index: 1000;
             padding: 25px 5%;
             display: flex; justify-content: space-between; align-items: center;
             background: rgba(5, 5, 5, 0.95);
@@ -53,6 +64,7 @@
 
         /* Hero Section */
         #hero {
+            width: 100vw;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -81,12 +93,12 @@
 
         /* Container Section */
         .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
-        section { padding: 120px 0; }
+        section { padding: 120px 0; width: 100%; }
         .section-header { text-align: center; margin-bottom: 80px; }
         .section-header h2 { font-size: 50px; margin-bottom: 20px; }
         .section-header p { color: var(--text-muted); text-transform: uppercase; letter-spacing: 3px; font-size: 12px; }
 
-        /* FOUR BOXES: Photography Styles/Projects */
+        /* FOUR BOXES */
         .style-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -128,7 +140,7 @@
         .faq-item p { font-size: 15px; color: var(--text-muted); padding-left: 18px; }
 
         /* Footer */
-        footer { padding: 80px 0; border-top: 1px solid var(--border); text-align: center; }
+        footer { padding: 80px 0; border-top: 1px solid var(--border); text-align: center; width: 100%; background: var(--bg-deep); }
         .footer-logo { font-size: 30px; margin-bottom: 30px; display: block; letter-spacing: 5px; }
         .socials { display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; }
         .socials a { color: var(--text-muted); text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; }
@@ -158,42 +170,40 @@
         </div>
     </section>
 
-    <!-- 2. FOUR BOXES: PROJECTS & STYLES -->
-    <section id="projects" class="container">
-        <div class="section-header">
-            <p>Our Signature Styles</p>
-            <h2>PHOTOGRAPHY <span class="italic">Series</span></h2>
-        </div>
-        <div class="style-grid">
-            <!-- Box 1 -->
-            <div class="style-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOkIgyTTBZvN4CIdGOWQWhmT59ITCc5HRz0w&s?auto=compress&cs=tinysrgb&w=800">
-                <div class="style-info">
-                    <h3>The Noir Project</h3>
-                    <p>Dramatic low-key lighting focused on high contrast and deep shadows to emphasize silhouette and mystery.</p>
+    <!-- 2. PROJECTS -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <p>Our Signature Styles</p>
+                <h2>PHOTOGRAPHY <span class="italic">Series</span></h2>
+            </div>
+            <div class="style-grid">
+                <div class="style-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOkIgyTTBZvN4CIdGOWQWhmT59ITCc5HRz0w&s">
+                    <div class="style-info">
+                        <h3>The Noir Project</h3>
+                        <p>Dramatic low-key lighting focused on high contrast and deep shadows.</p>
+                    </div>
+                </div>
+                <div class="style-card">
+                    <img src="https://i.pinimg.com/736x/95/0f/20/950f202b8152aeb504241bd82072db88.jpg">
+                    <div class="style-info">
+                        <h3>Ethereal Glow</h3>
+                        <p>High-key, soft focus photography creating a romantic, airy atmosphere.</p>
+                    </div>
+                </div>
+                <div class="style-card">
+                    <img src="https://i.pinimg.com/736x/2d/7f/fe/2d7ffe7e87b3eee10766b517b65cd62c.jpg">
+                    <div class="style-info">
+                        <h3>Textural Studies</h3>
+                        <p>Interplay between skin and fine fabrics like silk and lace.</p>
+                    </div>
                 </div>
             </div>
-            <!-- Box 2 -->
-            <div class="style-card">
-                <img src="https://i.pinimg.com/736x/95/0f/20/950f202b8152aeb504241bd82072db88.jpg?auto=compress&cs=tinysrgb&w=800">
-                <div class="style-info">
-                    <h3>Ethereal Glow</h3>
-                    <p>High-key, soft focus photography using natural light to create a romantic, airy, and timeless atmosphere.</p>
-                </div>
-            </div>
-            <!-- Box 3 -->
-            <div class="style-card">
-                <img src="https://i.pinimg.com/736x/2d/7f/fe/2d7ffe7e87b3eee10766b517b65cd62c.jpg?auto=compress&cs=tinysrgb&w=800">
-                <div class="style-info">
-                    <h3>Textural Studies</h3>
-                    <p>Exploring the interplay between skin and fine fabrics like silk and lace for an editorial, high-fashion feel.</p>
-                </div>
-            </div>
-          
         </div>
     </section>
 
-    <!-- 3. INVESTMENT / PRICING -->
+    <!-- 3. INVESTMENT -->
     <section id="investment" style="background: #080808; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
         <div class="container">
             <div class="section-header">
@@ -206,9 +216,7 @@
                     <span class="cost">$650</span>
                     <ul>
                         <li>60 Minute Private Session</li>
-                        <li>1 Artistic Direction</li>
                         <li>5 Hand-Retouched Master Files</li>
-                        <li>Private Digital Gallery</li>
                     </ul>
                     <a href="#contact" class="btn" style="padding: 15px 30px;">Inquire</a>
                 </div>
@@ -217,10 +225,8 @@
                     <span class="cost">$1,200</span>
                     <ul>
                         <li>3 Hour Experience</li>
-                        <li>3 Wardrobe Changes</li>
                         <li>15 Hand-Retouched Master Files</li>
                         <li>Professional Hair & Makeup</li>
-                        <li>$100 Print Credit</li>
                     </ul>
                     <a href="#contact" class="btn" style="padding: 15px 30px;">Inquire</a>
                 </div>
@@ -229,10 +235,7 @@
                     <span class="cost">$2,800</span>
                     <ul>
                         <li>Full Day Studio Booking</li>
-                        <li>Unlimited Wardrobe</li>
-                        <li>All High-Res Retouched Files</li>
                         <li>Hand-Bound Italian Art Book</li>
-                        <li>Luxury Gift Box Packaging</li>
                     </ul>
                     <a href="#contact" class="btn" style="padding: 15px 30px;">Inquire</a>
                 </div>
@@ -240,28 +243,22 @@
         </div>
     </section>
 
-    <!-- 4. FAQ SECTION -->
-    <section id="faq" class="container">
-        <div class="section-header">
-            <p>Your Comfort First</p>
-            <h2>FREQUENTLY <span class="italic">Asked</span></h2>
-        </div>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h4>How is my privacy protected?</h4>
-                <p>Discretion is our core value. Images are never shared publicly without signed, written consent. Your gallery is password-protected and hosted on encrypted servers.</p>
+    <!-- 4. FAQ -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <p>Your Comfort First</p>
+                <h2>FREQUENTLY <span class="italic">Asked</span></h2>
             </div>
-            <div class="faq-item">
-                <h4>What if I'm not a model?</h4>
-                <p>99% of our clients aren't models. Our job is to guide you through every breath and pose, ensuring you look and feel like a work of art.</p>
-            </div>
-            <div class="faq-item">
-                <h4>What should I bring?</h4>
-                <p>We provide a comprehensive "Prep Guide" upon booking. We also offer a curated client closet of silks and lace for your use.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Do you retouch the photos?</h4>
-                <p>Yes. We specialize in artful retouching—enhancing skin tone and lighting while preserving your natural, authentic beauty.</p>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How is my privacy protected?</h4>
+                    <p>Discretion is our core value. Images are never shared without consent.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What if I'm not a model?</h4>
+                    <p>99% of our clients aren't models. We guide you through every pose.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -270,11 +267,10 @@
     <section id="contact" style="background: var(--bg-card);">
         <div class="container" style="max-width: 800px; text-align: center;">
             <h2 style="font-size: 50px; margin-bottom: 20px;">BEGIN YOUR <span class="italic">Story</span></h2>
-            <p style="color: var(--text-muted); margin-bottom: 50px;">Strictly confidential inquiries for private sessions.</p>
             <form onsubmit="event.preventDefault(); alert('Private Inquiry Received.');">
-                <input type="text" placeholder="NAME" style="width: 100%; padding: 20px; background: #000; border: 1px solid var(--border); color: #fff; margin-bottom: 15px; outline: none; font-family: var(--font-body);">
-                <input type="email" placeholder="EMAIL" style="width: 100%; padding: 20px; background: #000; border: 1px solid var(--border); color: #fff; margin-bottom: 15px; outline: none; font-family: var(--font-body);">
-                <textarea rows="5" placeholder="WHAT IS YOUR VISION?" style="width: 100%; padding: 20px; background: #000; border: 1px solid var(--border); color: #fff; margin-bottom: 30px; outline: none; font-family: var(--font-body);"></textarea>
+                <input type="text" placeholder="NAME" style="width: 100%; padding: 20px; background: #000; border: 1px solid var(--border); color: #fff; margin-bottom: 15px; outline: none;">
+                <input type="email" placeholder="EMAIL" style="width: 100%; padding: 20px; background: #000; border: 1px solid var(--border); color: #fff; margin-bottom: 15px; outline: none;">
+                <textarea rows="5" placeholder="WHAT IS YOUR VISION?" style="width: 100%; padding: 20px; background: #000; border: 1px solid var(--border); color: #fff; margin-bottom: 30px; outline: none;"></textarea>
                 <button type="submit" class="btn" style="width: 100%;">Submit Private Inquiry</button>
             </form>
         </div>
@@ -287,7 +283,7 @@
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
         </div>
-        <p style="color: #444; font-size: 10px; letter-spacing: 2px;">© 2024 SHADOW & GRACE ARTISTRY. ALL CONTENT PROTECTED UNDER COPYRIGHT LAW.</p>
+        <p style="color: #444; font-size: 10px; letter-spacing: 2px;">© 2024 SHADOW & GRACE ARTISTRY.</p>
     </footer>
 
 </body>
